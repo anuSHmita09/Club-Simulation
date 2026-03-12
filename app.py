@@ -8,8 +8,9 @@ from firebase_admin import credentials, firestore
 # Firebase Connection
 # ----------------------------
 
+key_dict = json.loads(st.secrets["firebase_key"])
+
 if not firebase_admin._apps:
-    key_dict = json.loads(st.secrets["firebase_key"])
     cred = credentials.Certificate(key_dict)
     firebase_admin.initialize_app(cred)
 
@@ -288,3 +289,4 @@ elif menu == "Search Guest":
 
 
             st.warning("Guest Not Found")
+
