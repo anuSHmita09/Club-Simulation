@@ -5,13 +5,6 @@ from datetime import datetime
 import firebase_admin
 from firebase_admin import credentials, firestore
 
-# ----------------------------
-# Check if secret exists
-# ----------------------------
-
-if "firebase_key" not in st.secrets:
-    st.error("Firebase key not found in Streamlit secrets")
-    st.stop()
 
 # ----------------------------
 # Firebase Connection
@@ -298,6 +291,7 @@ elif menu == "Search Guest":
 
 
             st.warning("Guest Not Found")
+
 
 
 
